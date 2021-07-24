@@ -9,7 +9,7 @@ import (
 
 //CheckForPulseaudio makes sure that PA is running on the host
 func CheckForPulseaudio() bool {
-	raw := string(shell.Cmd("pgrep pulseaudio", true))
+	raw := string(shell.Cmd("pgrep 'pulseaudio|pipewire-pulse'", true))
 	if raw != "" {
 		return true
 	}
